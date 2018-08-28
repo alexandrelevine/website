@@ -48,7 +48,7 @@ For double safety you can check the remaining resources in the AWS Interface.
 You can use the ssh key specified during the launch of the stack to access any VM with the "centos" username.
 
 ```
-ssh -i <ssh-key name> centos@<ip>   # <ip> can be the public IP or the private IP of the controller/compute VM, both work
+ssh -i <ssh-key name> centos@<ip>   # <ip> can be the public IP or the private IP of the node
 sudo -s
 ```
 The sandbox interface will provide information to connect to Tungsten Fabric UI and Kubernetes dashboard.
