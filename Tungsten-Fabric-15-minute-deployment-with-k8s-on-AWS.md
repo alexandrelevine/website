@@ -35,7 +35,7 @@ Press "Continue to Subscribe", then "Accept Terms".
 
 9. Go to Sandbox UI URL and wait for the deployment (site will be available 2-3 minutes after the creation of the stack).
 10. After a successful deployment, the sandbox interface will provide information to connect to Contrail and Kubernetes services.
-11. Use  Contrail UI URLs, login and password to start.
+11. Use  Tungsten Fabric UI URLs, login and password to start.
 
 IMPORTANT: When you've finished using the sandbox you can use the DELETE SANDBOX button to clear all of the used resources.
 
@@ -51,34 +51,7 @@ You can use the ssh key specified during the launch of the stack to access any V
 ssh centos@<ip>   # <ip> can be the public IP or the private IP of the controller/compute VM, both work
 sudo -s
 ```
-**Accessing the Contrail webUI:**
-
-```
-https://<controller-public-ip>:8143      admin / contrail123
-```
-
-**Accessing the Kubernetes dashboard:**
-
-On the controller:
-
-```
-kubectl get pods -n kube-system -o wide | grep dashboard
-```
-
-Check the IP column. It tells you the private IP address of the compute node where the dashboard POD is running. You need to find out the associated public IP address (it is left to you as an exercise). Once you know it, you can connect to the URL:
-
-```
-https://<public-ip>:8443
-```
-
-Select the token option. Where can you get the token from? There is one on the controller’s file /root/k8s_dashboard_token.txt , but it only allows to visualize. If you want read-write access do the following:
-
-```
-kubectl get secret -n contrail | grep kubemanager
-kubectl describe secret <name> -n contrail | grep "token:" | awk '{print $2}'
-```
-
-Take your time to browse the dashboard. During the next exercises, you can choose to do some tasks on the web instead of (or in addition to) the CLI.
+The sandbox interface will provide information to connect to Tungsten Fabric UI and Kubernetes dashboard.
 
 
 ## Appendix: IAM Users
