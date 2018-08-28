@@ -2,6 +2,8 @@
 
 This document contains instructions to deploy a Tungsten Fabric cluster that interconnects PODs orchestrated by Kubernetes. The Tungsten Fabric cluster is composed of deployment node, one controller and two compute nodes that run as EC2 VMs.
 
+[ ![](images/small_carbide_deployment.png) ](images/carbide_deployment.png)
+
 ## Requirements
 
 Before you start using this CloudFormation template, it is necessary to subscribe to the official image of CentOS 7 x86_64 HVM.
