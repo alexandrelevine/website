@@ -2,7 +2,7 @@
 
 This document contains instructions to deploy a Tungsten Fabric cluster that interconnects PODs orchestrated by Kubernetes. The Tungsten Fabric cluster is composed of deployment node, one controller and two compute nodes that run as EC2 VMs.
 
-[ ![](images/small_carbide_deployment.png) ](images/carbide_deployment.png)
+[ ![](images/carbide_deployment_small.png) ](images/carbide_deployment.png)
 
 ## Requirements
 
@@ -52,6 +52,8 @@ ssh -i <ssh-key name> centos@<ip>   # <ip> can be the public IP or the private I
 sudo -s
 ```
 The sandbox interface will provide information to connect to Tungsten Fabric UI and Kubernetes dashboard.
+
+[ ![](images/carbide_ui_small.png) ](images/carbide_ui_full.png)
 
 
 ## Appendix: IAM Users
