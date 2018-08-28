@@ -1,6 +1,6 @@
 ## Introduction
 
-This document contains instructions to deploy a Tungsten Fabric cluster that interconnects PODs orchestrated by Kubernetes. The Tungsten Fabric cluster is composed of one controller and two compute nodes that run as EC2 VMs.
+This document contains instructions to deploy a Tungsten Fabric cluster that interconnects PODs orchestrated by Kubernetes. The Tungsten Fabric cluster is composed of deployment node, one controller and two compute nodes that run as EC2 VMs.
 
 ## Requirements
 
