@@ -1,22 +1,22 @@
 ## Introduction
 
-This document contains instructions to deploy a Tungsten Fabric cluster that interconnects pods orchestrated by Kubernetes. The Tungsten Fabric cluster is composed of deployment node, one controller and two compute nodes that run as EC2 VMs.
+This document contains instructions how to deploy a sandbox with Tungsten Fabric cluster orchestrated by Kubernetes in AWS. The Tungsten Fabric cluster is composed of deployment node, one controller and two compute nodes that run as EC2 VMs.
 
 [ ![](images/carbide_deployment_small.png) ](images/carbide_deployment.png)
 
 ## Requirements
 
-Before you start using this CloudFormation template, it is necessary to subscribe to the official image of CentOS 7 x86_64 HVM.
+It is necessary to subscribe to the official image of CentOS 7 x86_64 HVM before you start using the sandbox.
 
 Once you have signed into the AWS console, go to the following URL: <a href="https://aws.amazon.com/marketplace/pp/B00O7WM7QW/" target="_blank">AWS Marketplace</a>
 
 Press "Continue to Subscribe", then "Accept Terms".
 
-*If you are connected as an IAM user, and you can not perform a task in AWS Marketplace, check the Appendix at the end of the document.
+*If you are connected as an IAM user, and you can not perform a task in AWS Marketplace, check the Appendix at the end of the document for the instructions.
 
 ## Procedure
 
-1. Just click on this button to create the stack:
+1. Just click on this button to create the sandbox (run as AWS CloudFormation stack) :
 
 <a href="https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=tungstenfabric-k8s&amp;templateURL=https://s3-us-west-2.amazonaws.com/tungsten-fabric-sandbox/tungsten_fabric_stack_template.yaml" target="_blank"><img alt="Launch Stack" src="https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg"></a>
 
@@ -33,7 +33,7 @@ Press "Continue to Subscribe", then "Accept Terms".
 
 [ ![](images/status_stack_small.png) ](images/status_stack_1400x900.png)
 
-9. Go to Sandbox UI URL and wait for the deployment (site will be available 2-3 minutes after the creation of the stack).
+9. Go to Sandbox UI URL and wait for the deployment (site will be available in 2-3 minutes after the creation of the stack).
 10. After a successful deployment, the sandbox interface will provide information to connect to Tungsten Fabric and Kubernetes services.
 11. Use Tungsten Fabric UI URLs, login and password to start.
 
@@ -41,7 +41,7 @@ IMPORTANT: When you've finished using the sandbox you can use the DELETE SANDBOX
 
 [ ![](images/delete_stack_small.png) ](images/delete_stack_1400x900.png)
 
-For double safety you can check the remaining resources in the AWS Interface.
+For double safety you can check the remaining resources in the AWS Interface after deleting.
 
 ## Accessing the cluster:
 
@@ -51,20 +51,20 @@ You can use the ssh key specified during the launch of the stack to access any V
 ssh -i <ssh-key name> centos@<ip>   # <ip> can be the public IP or the private IP of the node
 sudo -s
 ```
-The sandbox interface will provide information to connect to Tungsten Fabric UI and Kubernetes dashboard.
+The sandbox interface will provide information about how to connect to Tungsten Fabric UI and Kubernetes dashboard.
 
 [ ![](images/carbide_ui_small.png) ](images/carbide_ui_full.png)
 
 
 ## Appendix: IAM Users
 
-If, instead of using a root account, you are signing with an IAM user, you need to grant additional privileges for the user.
+You need to grant additional privileges for the user if instead of using a root account you are signing with an IAM user.
 
 - Log on to the AWS console.
-- In the AWS services search at the top left of the console, look for IAM and select it.
-- On the left navigation bar, click on the user whose privileges you need to change.
-- At the right bottom, click Add inline policy.
-- Go to the JSON tab, and replace the content with the following policy:
+- In the AWS services search at the top left of the console look for IAM and select it.
+- On the left navigation bar click on the user whose privileges you need to change.
+- At the right bottom click Add inline policy.
+- Go to the JSON tab and replace the content with the following policy:
 
 ```
 {
