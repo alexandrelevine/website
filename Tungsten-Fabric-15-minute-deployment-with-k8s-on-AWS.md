@@ -34,8 +34,8 @@ Press "Continue to Subscribe", then "Accept Terms".
 [ ![](images/status_stack_small.png) ](images/status_stack_1400x900.png)
 
 9. Go to Sandbox UI URL and wait for the deployment (site will be available 2-3 minutes after the creation of the stack).
-10. After a successful deployment, the sandbox interface will provide information to connect to Contrail and Kubernetes services.
-11. Use  Tungsten Fabric UI URLs, login and password to start.
+10. After a successful deployment, the sandbox interface will provide information to connect to Tungsten Fabric and Kubernetes services.
+11. Use Tungsten Fabric UI URLs, login and password to start.
 
 IMPORTANT: When you've finished using the sandbox you can use the DELETE SANDBOX button to clear all of the used resources.
 
